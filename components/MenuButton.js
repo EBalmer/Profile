@@ -6,9 +6,9 @@ export default class Home extends Component {
     render() {
 
         return (
-            <TouchableOpacity onPress={this.props.onPress}>
+            <TouchableOpacity onPress={this.props.navigation}>
                 <View style={styles.button}>
-                    <Text> Adventure! </Text>
+                    <Text> {this.props.title} </Text>
                 </View>
             </TouchableOpacity>
         );

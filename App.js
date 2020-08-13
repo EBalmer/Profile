@@ -6,7 +6,7 @@ import { Home, Adventure } from './screens/index'
 
 function HomeScreen({ navigation }) {
   return (
-    <Home onPress = {() => navigation.navigate('Adventure')} />
+    <Home navAdventure = {() => navigation.navigate('Adventure')} />
   );
 }
 
