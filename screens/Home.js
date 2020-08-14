@@ -1,44 +1,28 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { MenuButton } from '../components/index';
+import Menu from '../components/Menu';
 import { Containers } from '../styles/index'
 
 export default class Home extends Component {
     render() {
 
         return (
-            <View style={styles.main}>
-                <View style={styles.menuRow}>
-                    <View style={styles.buttonContainer}>
-                        <MenuButton navigation={this.props.navAdventure} title='Adventure' />
-                    </View>
-                    <View style={styles.buttonContainer}>
-                        <MenuButton  title = 'Blank'/>
-                    </View>
-                </View>
-                <View style={styles.menuRow}>
-                    <View style={styles.buttonContainer}>
-                        <MenuButton   title = 'Blank'/>
-                    </View>
-                    <View style={styles.buttonContainer}>
-                        <MenuButton   title = 'Blank'/>
-                    </View>
-                </View>
-                <View style={styles.menuRow}>
-                    <View style={styles.buttonContainer}>
-                        <MenuButton   title = 'Blank'/>
-                    </View>
-                    <View style={styles.buttonContainer}>
-                        <MenuButton   title = 'Blank' />
-                    </View>
-                </View>
+            <View style={{ flex: 1 }}>
+                <View style={{ backgroundColor: 'black', flex: 0.3, marginTop: 25 }} />
+                <Menu 
+                    navA={this.props.navPersonalStatement} titleA='Personal Statement'
+                    navB={this.props.navExperience} titleB='Experience'
+                    navC={this.props.navEducation} titleC='Education'
+                    navD={this.props.navEmployment} titleD='Employment'
+                    navE={this.props.navHobbies} titleE='Hobbies'
+                    navF={this.props.navDetails} titleF='Details'/>
             </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
-    main: {
+    menu: {
         ...Containers.base
     },
     menuRow: {
@@ -47,4 +31,4 @@ const styles = StyleSheet.create({
     buttonContainer: {
         ...Containers.buttonContainer
     }
-  })
+})

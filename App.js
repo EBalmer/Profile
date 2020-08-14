@@ -1,18 +1,53 @@
 import * as React from 'react';
-import { View, Text, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Home, Adventure } from './screens/index'
+import { Hobbies, Home, PersonalStatement, Education, Employment, Experience, Details } from './screens/index'
 
 function HomeScreen({ navigation }) {
   return (
-    <Home navAdventure = {() => navigation.navigate('Adventure')} />
+    <Home
+      navHobbies={() => navigation.navigate('Hobbies')}
+      navPersonalStatement={() => navigation.navigate('PersonalStatement')}
+      navEducation={() => navigation.navigate('Education')}
+      navEmployment={() => navigation.navigate('Employment')}
+      navExperience={() => navigation.navigate('Experience')}
+      navDetails={() => navigation.navigate('Details')} />
   );
 }
 
-function AdventureScreen() {
+function PersonalStatementScreen() {
   return (
-    <Adventure />
+    <PersonalStatement />
+  );
+}
+
+function HobbiesScreen() {
+  return (
+    <Hobbies />
+  );
+}
+
+function EducationScreen() {
+  return (
+    <Education />
+  );
+}
+
+function EmploymentScreen() {
+  return (
+    <Employment />
+  );
+}
+
+function ExperienceScreen() {
+  return (
+    <Experience />
+  );
+}
+
+function DetailsScreen() {
+  return (
+    <Details />
   );
 }
 
@@ -25,7 +60,12 @@ function App() {
         headerShown: false
       }}>
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Adventure" component={AdventureScreen} />
+        <Stack.Screen name="Hobbies" component={HobbiesScreen} />
+        <Stack.Screen name="PersonalStatement" component={PersonalStatementScreen} />
+        <Stack.Screen name="Education" component={EducationScreen} />
+        <Stack.Screen name="Employment" component={EmploymentScreen} />
+        <Stack.Screen name="Experience" component={ExperienceScreen} />
+        <Stack.Screen name="Details" component={DetailsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
