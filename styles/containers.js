@@ -20,3 +20,9 @@ export const buttonContainer = {
     ...base,
     ...center
 }
+
+export const animatedTextContainer = {
+    ...base,
+    ...center,
+    ...row
+}
