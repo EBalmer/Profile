@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 import Menu from '../components/Menu';
-import { Containers } from '../styles/index'
+import { Containers, Typography, Colours } from '../styles/index'
+import { center } from '../styles/containers';
 
 export default class Home extends Component {
     render() {
 
         return (
-            <View style={{ flex: 1 }}>
-                <View style={{ backgroundColor: 'black', flex: 0.3, marginTop: 25 }} />
+            <View style={styles.main}>
+                <View style={{ flex: 0.25, marginTop: 25, justifyContent: 'center', alignItems: 'center' }}>
+                    <Text style={styles.title}>Edd Balmer</Text>
+                </View>
                 <Menu 
-                    navA={this.props.navPersonalStatement} titleA='Personal Statement'
+                    navA={this.props.navPersonalStatement} titleA='Profile'
                     navB={this.props.navExperience} titleB='Experience'
                     navC={this.props.navEducation} titleC='Education'
                     navD={this.props.navEmployment} titleD='Employment'
@@ -22,13 +25,13 @@ export default class Home extends Component {
 }
 
 const styles = StyleSheet.create({
-    menu: {
-        ...Containers.base
+    main: {
+        ...Containers.base,
+        backgroundColor: Colours.theme.background
     },
-    menuRow: {
-        ...Containers.menuRow
-    },
-    buttonContainer: {
-        ...Containers.buttonContainer
+    title: {
+        ...Typography.base,
+        ...Typography.header,
+        color: Colours.theme.main
     }
 })

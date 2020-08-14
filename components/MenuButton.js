@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { TouchableOpacity, View, Text, StyleSheet } from 'react-native';
-import { Colours, Buttons, Containers } from '../styles/index'
+import { Colours, Buttons, Containers, Typography} from '../styles/index'
 
 export default class Home extends Component {
     render() {
@@ -9,7 +9,7 @@ export default class Home extends Component {
             <View style={styles.buttonContainer}>
                 <TouchableOpacity onPress={this.props.navigation}>
                     <View style={styles.button}>
-                        <Text> {this.props.title} </Text>
+                        <Text style={styles.label}> {this.props.title} </Text>
                     </View>
                 </TouchableOpacity>
             </View>
@@ -24,5 +24,10 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
         ...Containers.buttonContainer
+    },
+    label: {
+        ...Typography.base,
+        ...Typography.subHeader,
+        color: Colours.theme.main
     }
 })
